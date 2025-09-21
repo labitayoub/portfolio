@@ -11,7 +11,21 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Ayoub Labit - Full Stack Developer",
   description: "Portfolio of Ayoub Labit, a passionate Full Stack Developer",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Ayoub Labit - Full Stack Developer',
+    description: 'Portfolio of Ayoub Labit, a passionate Full Stack Developer',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
