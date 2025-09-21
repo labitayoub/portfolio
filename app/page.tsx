@@ -12,6 +12,7 @@ import AnimatedCodeBlock from "@/components/ui/animated-code-block"
 import { downloadCV } from "@/lib/download-utils"
 import ColorShiftBackground from "@/components/ui/color-shift-background"
 import ClientWrapper from "@/components/ui/client-wrapper"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -114,6 +115,19 @@ export default function Portfolio() {
 
   useEffect(() => {
     setIsVisible(true)
+    const sections = document.querySelectorAll('section[id]')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.25, 0.5, 1] }
+    )
+    sections.forEach((sec) => observer.observe(sec))
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -127,39 +141,52 @@ export default function Portfolio() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800"
+        className="fixed top-0 w-full z-50"
       >
-        <div className="container mx-auto px-4 sm:px-6 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div whileHover={{ scale: 1.05 }} className="text-xl sm:text-2xl font-bold text-green-400">
+        <div className="container mx-auto px-4 sm:px-6 py-3">
+          <div className="flex items-center justify-between gap-4 rounded-full glass border-gradient px-4 sm:px-6 py-2.5">
+            <motion.a whileHover={{ scale: 1.05 }} href="#home" className="text-lg sm:text-xl font-bold gradient-text tracking-tight">
               Ayoub Labit
-            </motion.div>
-            
+            </motion.a>
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6 lg:space-x-8">
-              {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="hover:text-green-400 transition-colors cursor-pointer text-sm lg:text-base"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item}
-                </motion.a>
-              ))}
+            <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+              {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => {
+                const id = item.toLowerCase()
+                const active = activeSection === id
+                return (
+                  <motion.a
+                    key={item}
+                    href={`#${id}`}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`relative rounded-full px-3 py-1.5 text-xs lg:text-sm font-medium transition-colors focus-ring-custom ${active ? 'text-green-300' : 'text-gray-400 hover:text-green-300'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span className="relative z-10">{item}</span>
+                    {active && (
+                      <motion.span
+                        layoutId="nav-pill"
+                        className="absolute inset-0 rounded-full bg-green-500/15 border border-green-400/30"
+                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                      />
+                    )}
+                  </motion.a>
+                )
+              })}
+              <div className="pl-2 ml-2 border-l border-white/10 flex items-center"><ThemeToggle /></div>
             </div>
-            
-            {/* Mobile Menu Button */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white p-2"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
+            {/* Mobile Controls */}
+            <div className="flex items-center gap-2 md:hidden">
+              <ThemeToggle />
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-white p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10"
+              >
+                {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              </motion.button>
+            </div>
           </div>
           
           {/* Mobile Navigation Menu */}
@@ -170,24 +197,31 @@ export default function Portfolio() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden mt-4 pb-4 border-t border-gray-700"
+                className="md:hidden mt-3 pb-4"
               >
-                <div className="flex flex-col space-y-4 pt-4">
-                  {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
-                    <motion.a
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3 }}
-                      whileHover={{ scale: 1.05, x: 10 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="hover:text-green-400 transition-colors cursor-pointer text-lg font-medium py-2 px-4 hover:bg-gray-800/50 rounded-lg"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item}
-                    </motion.a>
-                  ))}
+                <div className="flex flex-col space-y-3 pt-2 rounded-xl glass border-gradient p-3">
+                  {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item, idx) => {
+                    const id = item.toLowerCase()
+                    const active = activeSection === id
+                    return (
+                      <motion.a
+                        key={item}
+                        href={`#${id}`}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.25, delay: idx * 0.03 }}
+                        whileHover={{ x: 6 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`relative rounded-lg px-4 py-2 text-base font-medium transition-colors ${active ? 'text-green-300' : 'text-gray-300 hover:text-green-300'}`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {active && (
+                          <motion.span layoutId="mobile-nav-pill" className="absolute inset-0 rounded-lg bg-green-500/10 border border-green-400/30" />
+                        )}
+                        <span className="relative z-10">{item}</span>
+                      </motion.a>
+                    )
+                  })}
                 </div>
               </motion.div>
             )}
@@ -196,7 +230,7 @@ export default function Portfolio() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6">
+      <section id="home" className="min-h-screen flex items-center justify-center pt-28 sm:pt-32 px-4 sm:px-6 section-wrapper">
         <div className="container mx-auto">
           <motion.div
             variants={staggerContainer}
@@ -213,32 +247,34 @@ export default function Portfolio() {
               >
                 Hello, I'm
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+              <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-tight gradient-text drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                 Ayoub Labit
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300">
                 Full Stack Developer
               </motion.p>
-              <motion.p variants={fadeInUp} className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0">
+              <motion.p variants={fadeInUp} className="text-sm sm:text-base lg:text-lg text-gray-300/90 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 I create exceptional digital experiences with modern technologies. Passionate about clean code and
                 innovative solutions.
               </motion.p>
 
               {/* Stats */}
               <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-4 lg:gap-6 pt-4 lg:pt-6 max-w-md mx-auto lg:mx-0">
-                <div className="bg-gray-800/50 p-3 sm:p-4 rounded-lg border border-gray-700">
-                  <h4 className="text-green-400 font-semibold mb-1 sm:mb-2 text-sm sm:text-base">School</h4>
-                  <p className="text-lg sm:text-xl font-bold">YouCode</p>
-                </div>
-                <div className="bg-gray-800/50 p-3 sm:p-4 rounded-lg border border-gray-700">
-                  <h4 className="text-green-400 font-semibold mb-1 sm:mb-2 text-sm sm:text-base">University</h4>
-                  <p className="text-lg sm:text-xl font-bold">UM6P</p>
-                </div>
+                {[
+                  { label: 'School', value: 'YouCode' },
+                  { label: 'University', value: 'UM6P' }
+                ].map((s) => (
+                  <div key={s.label} className="card-base card-hover rounded-xl p-3 sm:p-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5" />
+                    <h4 className="text-green-300 font-medium mb-1 sm:mb-2 text-xs sm:text-sm tracking-wide uppercase">{s.label}</h4>
+                    <p className="text-lg sm:text-xl font-semibold relative z-10">{s.value}</p>
+                  </div>
+                ))}
               </motion.div>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
                 <Button 
-                  className="bg-green-500 hover:bg-green-600 disabled:opacity-50 w-full sm:w-auto"
+                  className="btn-gradient-primary shadow-md hover:shadow-lg hover:brightness-110 active:scale-[0.98] disabled:opacity-50 w-full sm:w-auto"
                   onClick={async (e) => {
                     const button = e.currentTarget;
                     const originalText = button.textContent || 'Download CV';
@@ -279,9 +315,10 @@ export default function Portfolio() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white w-full sm:w-auto"
+                  className="relative border-green-500/60 text-green-300 hover:text-white hover:bg-green-500/80 w-full sm:w-auto overflow-hidden group"
                   onClick={() => window.open("mailto:labitayoub@gmail.com", "_blank")}
                 >
+                  <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-green-500/0 via-green-500/20 to-green-500/0" />
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me
                 </Button>
@@ -316,8 +353,9 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.05 }}
                   className="relative"
                 >
-                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full bg-gradient-to-r from-green-400 to-blue-500 p-1">
-                    <div className="w-full h-full rounded-full bg-gray-900 overflow-hidden">
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full p-[3px] relative bg-[conic-gradient(from_0deg,theme(colors.green.500),theme(colors.blue.500),theme(colors.violet.500),theme(colors.green.500))] animate-spin-slow">
+                    <div className="absolute inset-[3px] rounded-full bg-gray-900/90 backdrop-blur-xl" />
+                    <div className="w-full h-full rounded-full overflow-hidden relative">
                       <Image
                         src="/ayoub_profile.jpg"
                         alt="Ayoub Labit"
@@ -326,6 +364,7 @@ export default function Portfolio() {
                         className="w-full h-full rounded-full object-cover"
                         priority
                       />
+                      <div className="absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(0,0,0,0.6)]" />
                     </div>
                   </div>
                   <motion.div
@@ -458,20 +497,17 @@ export default function Portfolio() {
                   <motion.div
                     key={skill.name}
                     variants={fadeInUp}
-                    whileHover={{ scale: 1.05, rotate: 2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-lg border border-gray-700 text-center hover:border-green-500 transition-colors"
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="group relative card-base card-hover rounded-xl p-3 sm:p-4 lg:p-5 flex flex-col items-center text-center overflow-hidden"
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 mx-auto mb-2 sm:mb-3 lg:mb-4 flex items-center justify-center">
-                      <Image
-                        src={skill.icon}
-                        alt={skill.name}
-                        width={48}
-                        height={48}
-                        className="rounded-lg w-full h-full object-contain"
-                      />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-green-500/10 via-transparent to-blue-500/10" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mx-auto mb-2 sm:mb-3 flex items-center justify-center relative">
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-green-400/10 to-blue-500/10 opacity-0 group-hover:opacity-100" />
+                      <Image src={skill.icon} alt={skill.name} width={48} height={48} className="w-full h-full object-contain relative z-10" />
                     </div>
-                    <h3 className="font-semibold text-xs sm:text-sm lg:text-base">{skill.name}</h3>
+                    <h3 className="font-semibold text-[11px] sm:text-xs lg:text-sm tracking-wide relative z-10 text-gray-200 group-hover:text-green-300 transition-colors">{skill.name}</h3>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-24 h-24 bg-green-500/20 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity" />
                   </motion.div>
                 ))}
               </motion.div>
@@ -503,8 +539,8 @@ export default function Portfolio() {
                 <FloatingElement key={project.title} delay={index * 0.2} duration={5} yOffset={8} xOffset={4}>
                   <motion.div
                     variants={fadeInUp}
-                    whileHover={{ y: -10 }}
-                    className="bg-gray-900 rounded-lg overflow-hidden border border-gray-700 hover:border-green-500 transition-colors h-full flex flex-col"
+                    whileHover={{ y: -12 }}
+                    className="group relative rounded-2xl overflow-hidden card-base card-hover h-full flex flex-col border-gradient"
                   >
                     <div className="relative overflow-hidden">
                       <Image
@@ -513,29 +549,32 @@ export default function Portfolio() {
                         width={400}
                         height={250}
                         unoptimized
-                        className="w-full h-40 sm:h-48 object-cover transition-transform hover:scale-110"
+                        className="w-full h-40 sm:h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center space-x-2 sm:space-x-4">
-                        <Button size="sm" variant="outline" className="text-xs sm:text-sm">
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/40 to-black/80 opacity-60" />
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 sm:gap-3">
+                        <Button size="sm" variant="outline" className="relative text-xs sm:text-sm overflow-hidden">
+                          <span className="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                           <Github className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                           Code
                         </Button>
-                        <Button size="sm" className="bg-green-500 hover:bg-green-600 text-xs sm:text-sm">
+                        <Button size="sm" className="btn-gradient-primary text-xs sm:text-sm shadow">
                           <ExternalLink className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                           Live
                         </Button>
                       </div>
                     </div>
-                    <div className="p-4 sm:p-6 flex-1 flex flex-col">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
-                      <p className="text-gray-400 mb-4 text-sm sm:text-base flex-1">{project.description}</p>
-                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                    <div className="p-4 sm:p-6 flex-1 flex flex-col relative">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 tracking-tight text-white/90 group-hover:text-white">{project.title}</h3>
+                      <p className="text-gray-400 mb-4 text-sm sm:text-base flex-1 leading-relaxed">{project.description}</p>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 relative z-10">
                         {project.tech.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="bg-green-500/20 text-green-400 text-xs sm:text-sm">
+                          <Badge key={tech} variant="secondary" className="bg-green-500/15 text-green-300 border border-green-500/20 text-[10px] sm:text-xs">
                             {tech}
                           </Badge>
                         ))}
                       </div>
+                      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-32 bg-green-500/20 blur-3xl opacity-0 group-hover:opacity-40 transition-opacity" />
                     </div>
                   </motion.div>
                 </FloatingElement>
@@ -565,19 +604,21 @@ export default function Portfolio() {
                     key={exp.title}
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    transition={{ duration: 0.8, delay: index * 0.15 }}
                     viewport={{ once: true }}
-                    className="relative flex items-start mb-8 sm:mb-12"
+                    className="relative flex items-start mb-10 sm:mb-14"
                   >
-                    <div className="hidden sm:block absolute left-4 lg:left-6 w-4 h-4 bg-green-500 rounded-full border-4 border-gray-900"></div>
-                    <div className="w-full sm:ml-12 lg:ml-16 bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-green-500 transition-colors">
-                      <div className="flex flex-col sm:flex-row sm:items-center mb-2 gap-1 sm:gap-2">
+                    <div className="hidden sm:block absolute left-4 lg:left-6 w-4 h-4 rounded-full bg-gradient-to-br from-green-400 to-blue-500 border-4 border-gray-900 shadow" />
+                    <div className="w-full sm:ml-12 lg:ml-16 card-base card-hover rounded-xl p-4 sm:p-6 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5" />
+                      <div className="flex flex-col sm:flex-row sm:items-center mb-2 gap-1 sm:gap-2 relative z-10">
                         <Calendar className="text-green-400 hidden sm:block" size={16} />
-                        <span className="text-green-400 text-sm font-medium">{exp.period}</span>
+                        <span className="text-green-300 text-xs font-semibold tracking-wide uppercase">{exp.period}</span>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-semibold mb-1">{exp.title}</h3>
-                      <p className="text-gray-400 mb-2 sm:mb-3 text-sm sm:text-base">{exp.company}</p>
-                      <p className="text-gray-300 text-sm sm:text-base">{exp.description}</p>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-1 relative z-10 text-white/90">{exp.title}</h3>
+                      <p className="text-green-400 mb-2 sm:mb-3 text-xs sm:text-sm font-medium relative z-10">{exp.company}</p>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed relative z-10">{exp.description}</p>
+                      <div className="absolute -bottom-6 right-1/4 w-32 h-24 bg-blue-500/20 blur-2xl opacity-0 hover:opacity-40 transition-opacity" />
                     </div>
                   </motion.div>
                 ))}
