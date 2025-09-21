@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${jetbrainsMono.variable} ${inter.variable}`}>      
-      <body className="min-h-screen antialiased selection:bg-green-500/20 selection:text-green-300 font-sans relative">
+      <body className="min-h-screen antialiased selection:bg-green-500/20 selection:text-green-300 font-sans relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

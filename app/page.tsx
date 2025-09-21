@@ -353,8 +353,8 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.05 }}
                   className="relative"
                 >
-                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full p-[3px] relative bg-[conic-gradient(from_0deg,theme(colors.green.500),theme(colors.blue.500),theme(colors.violet.500),theme(colors.green.500))] animate-spin-slow">
-                    <div className="absolute inset-[3px] rounded-full bg-gray-900/90 backdrop-blur-xl" />
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-80 lg:h-80 xl:w-[22rem] xl:h-[22rem] rounded-full p-[3px] relative bg-[conic-gradient(from_0deg,theme(colors.green.500),theme(colors.blue.500),theme(colors.violet.500),theme(colors.green.500))] animate-spin-slow overflow-hidden will-change-transform">
+                    <div className="absolute inset-[3px] rounded-full bg-gray-900/90 backdrop-blur-xl overflow-hidden" />
                     <div className="w-full h-full rounded-full overflow-hidden relative">
                       <Image
                         src="/ayoub_profile.jpg"
