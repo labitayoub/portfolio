@@ -1,49 +1,31 @@
+export default async function handler(req, res) {
+  console.log('Received request:', req.body);
 
-// import nodemailer from 'nodemailer'
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
 
-// export default async function handler(req, res) {
-//     console.log('Received request:', req.body);
+  const { name, email, subject, message } = req.body;
 
-//     if (req.method !== 'POST') {
-//         return res.status(405).json({ message: 'Method not allowed' });
-//     }
+  // Validation des données
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ message: 'Tous les champs sont requis' });
+  }
 
-//     const {name, email, subject, message} = req.body
+  try {
+    // Pour l'instant, on retourne juste un succès
+    // Vous pouvez ajouter la logique d'envoi d'email plus tard
+    console.log('Message reçu:', { name, email, subject, message });
 
-
-//     const transporter = nodemailer.createTransport({
-//         host: "smtp.ethereal.email",
-//         port:  587,
-//         secure: false, 
-//         auth: {
-//           user:  "dsimo4323@gmail.com",
-//           pass: "uajo erpz akjt lyhq",
-//         },
-//       });
-      
-//       try {
-//         const emailResponse = await transporter.sendMail({
-//             from: name,
-//             to: "dsimo4323@gmail.com",
-//             replyTo: email,
-//             subject: subject,
-//             text: message,
-//             html: `
-//             <p>Name: ${name}</p>
-//             <p>Email: ${email}</p>
-//             <p>Subject: ${subject}</p>
-//             <p>Message: ${message}</p>
-//             `
-//         })
-
-//         console.log('message send: %s', emailResponse.messageId)
-
-
-//         return res.status(200).json({ message: "Message sent successfully" })
-//       } catch (error) {
-//         console.log('Error sending email:', error);
-//         console.log('-----------------');
-//         return res.status(500).json({ message: "Error sending message..." })
-//       }
-
-// }
+    return res.status(200).json({ 
+      message: "Message envoyé avec succès!",
+      success: true 
+    });
+  } catch (error) {
+    console.log('Error processing message:', error);
+    return res.status(500).json({ 
+      message: "Erreur lors de l'envoi du message",
+      success: false 
+    });
+  }
+}

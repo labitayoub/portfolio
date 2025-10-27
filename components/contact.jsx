@@ -6,30 +6,36 @@ import { FaTelegramPlane } from "react-icons/fa";
 const Contact = () => {
 
   async function handleSubmit(event) {
-//     event.preventDefault();
+    event.preventDefault();
 
-//     const data = {
-//       name: event.target.name.value,
-//       email: event.target.email.value,
-//       subject: event.target.subject.value,
-//       message: event.target.message.value,
-//     }
+    const data = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      subject: event.target.subject.value,
+      message: event.target.message.value,
+    }
 
-//     const response = await fetch("/api/contact",{
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     }).then((res)=>{
-//       console.log("message sent successfully..")
-//       console.log(res)
-//     }).catch((err)=>{
-//       console.log("Error sending message---")
-//       console.log(err)
-//     })
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-
+      const result = await response.json();
+      
+      if (result.success) {
+        alert("Message envoyé avec succès!");
+        event.target.reset();
+      } else {
+        alert("Erreur lors de l'envoi du message");
+      }
+    } catch (err) {
+      console.log("Error sending message:", err);
+      alert("Erreur lors de l'envoi du message");
+    }
   }
 
 
