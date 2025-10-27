@@ -8,7 +8,7 @@ import {
 import { 
   SiLaravel, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, 
   SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello,
-  SiMaterialui, SiScrum
+  SiMaterialui, SiScrum, SiGithub
 } from 'react-icons/si';
 
 const About = () => {
@@ -100,7 +100,7 @@ const About = () => {
       { name: "MySQL", icon: SiMysql }
     ],
     tools: [
-      { name: "Git/GitHub", icon: FaGitAlt },
+      { name: "Git/GitHub", icon: SiGithub },
       { name: "Docker", icon: FaDocker },
       { name: "XAMPP", icon: SiXampp },
       { name: "Figma", icon: FaFigma }
@@ -163,8 +163,8 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -181,8 +181,8 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -199,8 +199,8 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -217,8 +217,8 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -235,8 +235,8 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
