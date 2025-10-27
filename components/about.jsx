@@ -75,17 +75,15 @@ const About = () => {
           <User className="w-5 h-5 text-accent mr-3" />
           <h2 className="text-lg lg:text-xl font-semibold">Informations Personnelles</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-3 lg:gap-4">
+        <div className="flex flex-wrap items-center gap-4 lg:gap-6">
           {Object.entries(personalInfo).map(([key, value], index) => (
-            <div key={index} className="flex items-start gap-2 min-w-0">
-              {key === "name" && <User className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
-              {key === "location" && <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
-              {key === "phone" && <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
-              {key === "email" && <Mail className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
-              {key === "freelance" && <Briefcase className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
-              <div className="min-w-0 flex-1 overflow-hidden">
-                <p className="font-medium text-xs lg:text-sm xl:text-base truncate">{value}</p>
-              </div>
+            <div key={index} className="flex items-center gap-2">
+              {key === "name" && <User className="w-4 h-4 text-accent flex-shrink-0" />}
+              {key === "location" && <MapPin className="w-4 h-4 text-accent flex-shrink-0" />}
+              {key === "phone" && <Phone className="w-4 h-4 text-accent flex-shrink-0" />}
+              {key === "email" && <Mail className="w-4 h-4 text-accent flex-shrink-0" />}
+              {key === "freelance" && <Briefcase className="w-4 h-4 text-accent flex-shrink-0" />}
+              <p className="font-medium text-sm lg:text-base whitespace-nowrap">{value}</p>
             </div>
           ))}
         </div>
