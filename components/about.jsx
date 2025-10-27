@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  User, Calendar, MapPin, Phone, Mail, Briefcase, GraduationCap, Building2, Code 
+  User, Calendar, MapPin, Phone, Mail, Briefcase, GraduationCap, Building2, Code, Award
 } from 'lucide-react';
 
 const About = () => {
@@ -12,41 +12,42 @@ const About = () => {
     freelance: "Disponible",
   };
 
-  const educationalInfo = [
+  const experiences = [
     {
-      type: "experience",
       title: "Développeur Full Stack",
       location: "Devstratech, Casablanca",
       period: "Juillet 2025 - Septembre 2025",
       description: "Développement full-stack des projets ATS et LMS, conception d'API RESTful avec Laravel, création d'interfaces dynamiques en React.js avec MUI et Tailwind CSS, conteneurisation via Docker et gestion du code source sur Git/GitHub."
-    },
+    }
+  ];
+
+  const formations = [
     {
-      type: "formation",
       title: "Développement Web Full Stack",
       location: "YouCode (UM6P), Yousoufia",
       period: "2024 - Présent",
       description: "Formation intensive en développement Full Stack avec les technologies modernes."
     },
     {
-      type: "certification",
+      title: "Licence Fondamentale en Sciences Économiques et Gestion",
+      location: "Faculté Polydisciplinaire de Khouribga",
+      period: "2019",
+      description: "Formation en sciences économiques et gestion."
+    }
+  ];
+
+  const certifications = [
+    {
       title: "Developing Front-End Apps with React",
       location: "IBM / Coursera",
       period: "2025",
       description: "Certification en développement d'applications front-end avec React."
     },
     {
-      type: "certification",
       title: "Introduction to Cloud Computing",
       location: "IBM / Coursera",
       period: "2024",
       description: "Certification d'introduction au Cloud Computing."
-    },
-    {
-      type: "formation",
-      title: "Licence Fondamentale en Sciences Économiques et Gestion",
-      location: "Faculté Polydisciplinaire de Khouribga",
-      period: "2019",
-      description: "Formation en sciences économiques et gestion."
     }
   ];
 
@@ -107,30 +108,78 @@ const About = () => {
             <h2 className="text-lg lg:text-xl font-semibold">Expérience, Formation & Certifications</h2>
           </div>
           <div className="space-y-6">
-            {educationalInfo.slice().reverse().map((item, index) => (
-              <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer ">
-                {/* Title + Badge */}
-                <div className="flex items-center justify-between">
-                  
-                  <h3 className="font-semibold text-base lg:text-lg">{item.title}</h3>
-                  <span className={`px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-sm font-medium flex-shrink-0 bg-accent/20 text-accent}`}>
-                    {item.type === 'formation' ? 'Formation' : item.type === 'experience' ? 'Expérience' : 'Certification'}
-                  </span>
-                </div>
-                {/* Hidden Details until hover */}
-                <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden mt-2">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-gray-400" />
-                    <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
-                  </div>
-                  <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
-                </div>
+            {/* Expériences */}
+            <div className="mb-8">
+              <div className="flex items-center mb-4">
+                <Briefcase className="w-5 h-5 text-accent mr-2" />
+                <h3 className="text-base font-semibold">Expériences</h3>
               </div>
-            ))}
+              {experiences.map((item, index) => (
+                <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer mb-4">
+                  <h3 className="font-semibold text-base lg:text-lg mb-2">{item.title}</h3>
+                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden">
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="w-4 h-4 text-gray-400" />
+                      <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
+                    </div>
+                    <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Formations */}
+            <div className="mb-8">
+              <div className="flex items-center mb-4">
+                <GraduationCap className="w-5 h-5 text-accent mr-2" />
+                <h3 className="text-base font-semibold">Formations</h3>
+              </div>
+              {formations.map((item, index) => (
+                <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer mb-4">
+                  <h3 className="font-semibold text-base lg:text-lg mb-2">{item.title}</h3>
+                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden">
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="w-4 h-4 text-gray-400" />
+                      <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
+                    </div>
+                    <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Certifications */}
+            <div>
+              <div className="flex items-center mb-4">
+                <Award className="w-5 h-5 text-accent mr-2" />
+                <h3 className="text-base font-semibold">Certifications</h3>
+              </div>
+              {certifications.map((item, index) => (
+                <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer mb-4">
+                  <h3 className="font-semibold text-base lg:text-lg mb-2">{item.title}</h3>
+                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden">
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="w-4 h-4 text-gray-400" />
+                      <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
+                    </div>
+                    <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
