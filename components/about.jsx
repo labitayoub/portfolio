@@ -109,7 +109,7 @@ const About = () => {
       { name: "Jira", icon: SiJira, color: "#0052CC" },
       { name: "Notion", icon: SiNotion, color: "#000000" },
       { name: "Trello", icon: SiTrello, color: "#0079BF" },
-      { name: "Agile (Scrum)", icon: Code, color: "#50C878" }
+      { name: "Agile (Scrum)", icon: SiScrum, color: "#007ACC" }
     ]
   };
 
