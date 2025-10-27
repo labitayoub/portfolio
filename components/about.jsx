@@ -8,7 +8,7 @@ import {
 import { 
   SiLaravel, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, 
   SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello,
-  SiMaterialui
+  SiMaterialui, SiScrum
 } from 'react-icons/si';
 
 const About = () => {
@@ -79,37 +79,37 @@ const About = () => {
 
   const technicalSkills = {
     backend: [
-      { name: "Node.js", icon: FaNodeJs, color: "#339933" },
-      { name: "Express.js", icon: SiExpress, color: "#000000" },
-      { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
-      { name: "PHP", icon: FaPhp, color: "#777BB4" }
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Laravel", icon: SiLaravel },
+      { name: "PHP", icon: FaPhp }
     ],
     frontend: [
-      { name: "React.js", icon: FaReact, color: "#61DAFB" },
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "MUI", icon: SiMaterialui, color: "#007FFF" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "Bootstrap", icon: FaBootstrap, color: "#7952B3" },
-      { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" }
+      { name: "React.js", icon: FaReact },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "MUI", icon: SiMaterialui },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Bootstrap", icon: FaBootstrap },
+      { name: "HTML5", icon: FaHtml5 },
+      { name: "CSS3", icon: FaCss3Alt }
     ],
     database: [
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
-      { name: "MySQL", icon: SiMysql, color: "#4479A1" }
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql }
     ],
     tools: [
-      { name: "Git/GitHub", icon: FaGitAlt, color: "#F05032" },
-      { name: "Docker", icon: FaDocker, color: "#2496ED" },
-      { name: "XAMPP", icon: SiXampp, color: "#FB7A24" },
-      { name: "Figma", icon: FaFigma, color: "#F24E1E" }
+      { name: "Git/GitHub", icon: FaGitAlt },
+      { name: "Docker", icon: FaDocker },
+      { name: "XAMPP", icon: SiXampp },
+      { name: "Figma", icon: FaFigma }
     ],
     project: [
-      { name: "Jira", icon: SiJira, color: "#0052CC" },
-      { name: "Notion", icon: SiNotion, color: "#000000" },
-      { name: "Trello", icon: SiTrello, color: "#0079BF" },
-      { name: "Agile (Scrum)", icon: SiScrum, color: "#007ACC" }
+      { name: "Jira", icon: SiJira },
+      { name: "Notion", icon: SiNotion },
+      { name: "Trello", icon: SiTrello },
+      { name: "Agile (Scrum)", icon: SiScrum }
     ]
   };
 
@@ -123,7 +123,7 @@ const About = () => {
       {/* Résumé Professionnel */}
       <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 border border-accent/20">
         <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-          Je suis Développeur Full Stack passionné par la création d&apos;applications web modernes et performantes. Mon expertise couvre tout le cycle de développement, du front-end au back-end, avec une attention particulière à la qualité du code et à l&apos;expérience utilisateur.
+          Je suis Développeur Full Stack passionné par la création d'applications web modernes et performantes. Mon expertise couvre tout le cycle de développement, du front-end au back-end, avec une attention particulière à la qualité du code et à l'expérience utilisateur.
         </p>
       </div>
 
@@ -163,7 +163,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -179,7 +179,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -195,7 +195,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -211,7 +211,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -227,7 +227,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
