@@ -162,8 +162,10 @@ const About = () => {
                 {technicalSkills.backend.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
-                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
+                    <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -178,8 +180,10 @@ const About = () => {
                 {technicalSkills.frontend.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
-                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
+                    <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -194,8 +198,10 @@ const About = () => {
                 {technicalSkills.database.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
-                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
+                    <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -210,8 +216,10 @@ const About = () => {
                 {technicalSkills.tools.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
-                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
+                    <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -226,8 +234,10 @@ const About = () => {
                 {technicalSkills.project.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
-                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-accent text-base sm:text-lg flex-shrink-0" />
+                    <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="text-accent w-4 h-4" aria-hidden="true" />
+                      </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
