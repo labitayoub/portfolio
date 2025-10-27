@@ -161,10 +161,17 @@ const About = () => {
               <div className="grid grid-cols-2 gap-2.5">
                 {technicalSkills.backend.map((skill, index) => {
                   const IconComponent = skill.icon;
+                  if (!IconComponent) {
+                    console.warn(`Missing icon for skill: ${skill.name}`);
+                  }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
                       <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        {IconComponent ? (
+                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        ) : (
+                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                        )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -179,10 +186,17 @@ const About = () => {
               <div className="grid grid-cols-2 gap-2.5">
                 {technicalSkills.frontend.map((skill, index) => {
                   const IconComponent = skill.icon;
+                  if (!IconComponent) {
+                    console.warn(`Missing icon for skill: ${skill.name}`);
+                  }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
                       <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        {IconComponent ? (
+                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        ) : (
+                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                        )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -197,10 +211,17 @@ const About = () => {
               <div className="grid grid-cols-2 gap-2.5">
                 {technicalSkills.database.map((skill, index) => {
                   const IconComponent = skill.icon;
+                  if (!IconComponent) {
+                    console.warn(`Missing icon for skill: ${skill.name}`);
+                  }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
                       <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        {IconComponent ? (
+                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        ) : (
+                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                        )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -215,10 +236,17 @@ const About = () => {
               <div className="grid grid-cols-2 gap-2.5">
                 {technicalSkills.tools.map((skill, index) => {
                   const IconComponent = skill.icon;
+                  if (!IconComponent) {
+                    console.warn(`Missing icon for skill: ${skill.name}`);
+                  }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
                       <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        {IconComponent ? (
+                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        ) : (
+                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                        )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
@@ -233,10 +261,17 @@ const About = () => {
               <div className="grid grid-cols-2 gap-2.5">
                 {technicalSkills.project.map((skill, index) => {
                   const IconComponent = skill.icon;
+                  if (!IconComponent) {
+                    console.warn(`Missing icon for skill: ${skill.name}`);
+                  }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
                       <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        {IconComponent ? (
+                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                        ) : (
+                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                        )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
