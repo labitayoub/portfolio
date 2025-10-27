@@ -166,11 +166,11 @@ const About = () => {
                   }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center flex-shrink-0 ring-2 ring-accent/30">
                         {IconComponent ? (
-                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                          <IconComponent className="w-5 h-5" style={{ color: '#ffffff' }} aria-hidden="true" />
                         ) : (
-                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                          <Code className="w-5 h-5 text-white" aria-hidden="true" />
                         )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
@@ -191,11 +191,11 @@ const About = () => {
                   }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center flex-shrink-0 ring-2 ring-accent/30">
                         {IconComponent ? (
-                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                          <IconComponent className="w-5 h-5" style={{ color: '#ffffff' }} aria-hidden="true" />
                         ) : (
-                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                          <Code className="w-5 h-5 text-white" aria-hidden="true" />
                         )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
@@ -216,11 +216,11 @@ const About = () => {
                   }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center flex-shrink-0 ring-2 ring-accent/30">
                         {IconComponent ? (
-                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                          <IconComponent className="w-5 h-5" style={{ color: '#ffffff' }} aria-hidden="true" />
                         ) : (
-                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                          <Code className="w-5 h-5 text-white" aria-hidden="true" />
                         )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
@@ -241,11 +241,11 @@ const About = () => {
                   }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center flex-shrink-0 ring-2 ring-accent/30">
                         {IconComponent ? (
-                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                          <IconComponent className="w-5 h-5" style={{ color: '#ffffff' }} aria-hidden="true" />
                         ) : (
-                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                          <Code className="w-5 h-5 text-white" aria-hidden="true" />
                         )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
@@ -266,11 +266,11 @@ const About = () => {
                   }
                   return (
                     <div key={index} className="flex items-center gap-3 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center flex-shrink-0 ring-2 ring-accent/30">
                         {IconComponent ? (
-                          <IconComponent className="text-white w-4 h-4" aria-hidden="true" />
+                          <IconComponent className="w-5 h-5" style={{ color: '#ffffff' }} aria-hidden="true" />
                         ) : (
-                          <Code className="w-4 h-4 text-white" aria-hidden="true" />
+                          <Code className="w-5 h-5 text-white" aria-hidden="true" />
                         )}
                       </div>
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
