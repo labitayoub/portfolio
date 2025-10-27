@@ -94,7 +94,7 @@ const About = () => {
       {/* Résumé Professionnel */}
       <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
         <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-          Développeur Full Stack passionné, orienté vers la performance et la qualité du code. Conception de solutions web modernes, stables et bien structurées avec adoption des bonnes pratiques de développement et méthodes agiles.
+          Je suis Développeur Mern Stack
         </p>
       </div>
 
