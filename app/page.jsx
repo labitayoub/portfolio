@@ -7,6 +7,7 @@ import Typewriter from 'typewriter-effect';
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import { Element } from 'react-scroll';
+import Image from 'next/image';
 
 
 
@@ -40,7 +41,7 @@ export default function Home() {
             <p className="text-base lg:text-lg leading-relaxed mb-10">
               Bienvenue dans mon univers ! Je suis développeur web passionné avec une solide expertise en développement front-end et back-end. Je me spécialise dans la création d&apos;applications web intuitives et responsives en utilisant React et son écosystème technologique.
             </p>
-            <a href="/labit ayoub new.pdf" download>
+            <a href="/labit%20ayoub%20new.pdf" download>
               <Button
                 variant="outline"
                 size="lg"
@@ -56,10 +57,13 @@ export default function Home() {
           <div className="w-full lg:w-[40%] flex justify-center lg:justify-end">
             <div className="flex items-center justify-center">
               <div className="absolute z-10">
-                <img
-                  className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] rounded-full object-cover"
+                <Image
+                  className="rounded-full object-cover"
                   src="/ayoub_profile.jpg"
                   alt="Labit Ayoub"
+                  width={300}
+                  height={300}
+                  priority
                 />
               </div>
               <div className="relative rounded-full border-[3px] border-accent h-[320px] w-[320px] lg:h-[370px] lg:w-[370px] flex items-center justify-center animate-spin-slow">

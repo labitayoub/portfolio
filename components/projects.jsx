@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
+import Image from 'next/image';
 
 const Projects = () => {
   // Projects data
@@ -80,9 +81,11 @@ const Projects = () => {
                       Your browser does not support the video tag.
                     </video>
                   ) : (
-                    <img 
+                    <Image 
                       src={project.image} 
                       alt={project.title}
+                      width={600}
+                      height={400}
                       className='w-full h-full object-cover rounded-[20px]'
                     />
                   )}

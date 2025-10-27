@@ -47,7 +47,7 @@ const About = () => {
       type: "stage",
       title: "Stage de Développement Full Stack",
       location: "InoveTeam Agency, Casablanca",
-      period: "Juin 2025 - Août 2025",
+      period: "Juin 2024 - Août 2024",
       description: "Développement de solutions web en utilisant Vtiger, React.js et PHP pour optimiser les processus métier."
     },
     {
