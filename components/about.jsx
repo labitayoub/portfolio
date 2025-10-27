@@ -6,7 +6,6 @@ import {
 const About = () => {
   const personalInfo = {
     name: "Labit Ayoub",
-    dateOfBirth: "1er août 1998",
     location: "Agadir, MAROC",
     phone: "+212 622 734 781",
     email: "ayoub.labite@gmail.com",
@@ -80,7 +79,6 @@ const About = () => {
           {Object.entries(personalInfo).map(([key, value], index) => (
             <div key={index} className="flex items-start gap-2 min-w-0">
               {key === "name" && <User className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
-              {key === "dateOfBirth" && <Calendar className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
               {key === "location" && <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
               {key === "phone" && <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
               {key === "email" && <Mail className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />}
