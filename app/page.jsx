@@ -28,8 +28,8 @@ export default function Home() {
                   options={{
                     strings: [
                       'Développeur Web',
-                      'Designer UI/UX',
-                      'Développeur Next.js'
+                      'Développeur Mern Stack',
+                      'Développeur Full Stack'
                     ],
                     autoStart: true,
                     loop: true,

@@ -6,7 +6,7 @@ import {
 const About = () => {
   const personalInfo = {
     name: "Labit Ayoub - Développeur Mern Stack",
-    location: "Casa, MAROC",
+    location: "Casablanca, MAROC",
     phone: "+212 622 734 781",
     email: "ayoub.labite@gmail.com",
     freelance: "Disponible",
