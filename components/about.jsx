@@ -13,54 +13,47 @@ const About = () => {
   };
 
   const educationalInfo = [
-    
     {
-      type: "formation",
-      title: "Baccalauréat",
-      location: "Lycée Ibnou Sina Guelmim, Guelmim",
-      period: "Septembre 2017",
-      description: "Obtention du diplôme du baccalauréat avec mention."
+      type: "experience",
+      title: "Développeur Full Stack",
+      location: "Devstratech, Casablanca",
+      period: "Juillet 2025 - Septembre 2025",
+      description: "Développement full-stack des projets ATS et LMS, conception d'API RESTful avec Laravel, création d'interfaces dynamiques en React.js avec MUI et Tailwind CSS, conteneurisation via Docker et gestion du code source sur Git/GitHub."
     },
     {
       type: "formation",
-      title: "Technicien Agent Technique de Vente (ATV)",
-      location: 'ISTA NTIC "OFPPT", Guelmim',
-      period: "Septembre 2018 - Août 2020",
-      description: "Formation en techniques de vente, conseil client, gestion commerciale et suivi de la clientèle."
+      title: "Développement Web Full Stack",
+      location: "YouCode (UM6P), Yousoufia",
+      period: "2024 - Présent",
+      description: "Formation intensive en développement Full Stack avec les technologies modernes."
+    },
+    {
+      type: "certification",
+      title: "Developing Front-End Apps with React",
+      location: "IBM / Coursera",
+      period: "2025",
+      description: "Certification en développement d'applications front-end avec React."
+    },
+    {
+      type: "certification",
+      title: "Introduction to Cloud Computing",
+      location: "IBM / Coursera",
+      period: "2024",
+      description: "Certification d'introduction au Cloud Computing."
     },
     {
       type: "formation",
-      title: "Technicien Spécialisé en Commerce (TSC)",
-      location: 'ISTA NTIC "OFPPT", Guelmim',
-      period: "Mars 2022 - Mai 2022",
-      description: "Spécialisation en e-commerce, techniques web, marketing digital, gestion de projets et innovation numérique."
-    },
-    {
-      type: "formation",
-      title: "Développement Web",
-      location: '"AjiCode Agency", Agadir',
-      period: "Septembre 2022 - Mai 2023",
-      description: "Formation complète en développement web : concepts web, design, développement, JavaScript, C, PHP et stack MERN."
-    },
-    {
-      type: "stage",
-      title: "Stage de Développement Full Stack",
-      location: "InoveTeam Agency, Casablanca",
-      period: "Juin 2024 - Août 2024",
-      description: "Développement de solutions web en utilisant Vtiger, React.js et PHP pour optimiser les processus métier."
-    },
-    {
-      type: "formation",
-      title: "Développeur et Concepteur d'Applications Web et Mobile",
-      location: 'YouCode | UM6P, El Youssofia',
-      period: "Septembre 2024 - En cours",
-      description: "Formation intensive en développement d'applications web et mobiles avec les technologies modernes."
+      title: "Licence Fondamentale en Sciences Économiques et Gestion",
+      location: "Faculté Polydisciplinaire de Khouribga",
+      period: "2019",
+      description: "Formation en sciences économiques et gestion."
     }
   ];
 
   const technicalSkills = [
-    "C Language", "HTML/CSS", "JavaScript (ES6+)", "Tailwind CSS", "Bootstrap","Figma",
-    "React.js", "Node.js", "MongoDB", "Next.js", "MySQL", "REST API", "PHP", "Laravel", "SQL", "Docker"
+    "React.js", "MUI", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML/CSS",
+    "Node.js", "Express.js", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB",
+    "REST API", "Docker", "Git/GitHub", "Figma", "XAMPP"
   ];
 
   return (
@@ -110,8 +103,8 @@ const About = () => {
 
         <div className="lg:col-span-2 flex flex-col bg-secondary/50 rounded-xl p-5 lg:p-6 xl:p-7 shadow-lg bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
           <div className="flex items-center mb-6">
-            <GraduationCap className="w-5 h-5 text-accent mr-3" />
-            <h2 className="text-lg lg:text-xl font-semibold">Formation & Expérience</h2>
+            <Building2 className="w-5 h-5 text-accent mr-3" />
+            <h2 className="text-lg lg:text-xl font-semibold">Expérience, Formation & Certifications</h2>
           </div>
           <div className="space-y-6">
             {educationalInfo.slice().reverse().map((item, index) => (
@@ -121,7 +114,7 @@ const About = () => {
                   
                   <h3 className="font-semibold text-base lg:text-lg">{item.title}</h3>
                   <span className={`px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-sm font-medium flex-shrink-0 bg-accent/20 text-accent}`}>
-                    {item.type === 'formation' ? 'Formation' : 'Stage'}
+                    {item.type === 'formation' ? 'Formation' : item.type === 'experience' ? 'Expérience' : 'Certification'}
                   </span>
                 </div>
                 {/* Hidden Details until hover */}
