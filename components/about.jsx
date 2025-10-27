@@ -26,7 +26,7 @@ const About = () => {
       title: "Développement Web Full Stack",
       location: "YouCode (UM6P), Yousoufia",
       period: "2024 - Présent",
-      description: "Formation intensive en développement Full Stack avec les technologies modernes."
+      description: "Développement Web Full Stack"
     },
     {
       title: "Licence Fondamentale en Sciences Économiques et Gestion",
