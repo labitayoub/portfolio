@@ -92,16 +92,16 @@ const About = () => {
       </div>
 
       {/* Résumé Professionnel */}
-      <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
+      <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 border border-accent/20">
         <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-          Je suis Développeur Full Stack
+          Je suis Développeur Full Stack passionné par la création d&apos;applications web modernes et performantes. Mon expertise couvre tout le cycle de développement, du front-end au back-end, avec une attention particulière à la qualité du code et à l&apos;expérience utilisateur.
         </p>
       </div>
 
-      <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
-        <div className="flex items-center mb-5">
-          <User className="w-5 h-5 text-accent mr-3" />
-          <h2 className="text-lg lg:text-xl font-semibold">Informations Personnelles</h2>
+      <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 border border-accent/20">
+        <div className="flex items-center mb-5 pb-4 border-b border-accent/30">
+          <User className="w-6 h-6 text-accent mr-3" />
+          <h2 className="text-xl lg:text-2xl font-bold text-white">Informations Personnelles</h2>
         </div>
         <div className="flex flex-wrap items-center gap-4 lg:gap-6">
           {Object.entries(personalInfo).map(([key, value], index) => (
@@ -117,13 +117,13 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
         
-        <div className="lg:col-span-1 flex flex-col bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
-          <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg h-full">
-            <div className="flex items-center mb-5">
-              <Code className="w-5 h-5 text-accent mr-3" />
-              <h3 className="text-lg lg:text-xl font-semibold">Compétences Techniques</h3>
+        <div className="lg:col-span-1 flex flex-col">
+          <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg h-full border border-accent/20">
+            <div className="flex items-center mb-5 pb-4 border-b border-accent/30">
+              <Code className="w-6 h-6 text-accent mr-3" />
+              <h3 className="text-xl lg:text-2xl font-bold text-white">Compétences Techniques</h3>
             </div>
             <div className="grid grid-cols-2 gap-2.5">
               {technicalSkills.map((skill, index) => (
@@ -136,30 +136,41 @@ const About = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-2 flex flex-col bg-secondary/50 rounded-xl p-5 lg:p-6 xl:p-7 shadow-lg bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
-          <div className="flex items-center mb-6">
-            <Building2 className="w-5 h-5 text-accent mr-3" />
-            <h2 className="text-lg lg:text-xl font-semibold">Expérience, Formation & Certifications</h2>
+        <div className="lg:col-span-2 flex flex-col bg-secondary/50 rounded-xl p-5 lg:p-6 xl:p-7 shadow-lg border border-accent/20">
+          <div className="flex items-center mb-6 pb-4 border-b border-accent/30">
+            <Building2 className="w-6 h-6 text-accent mr-3" />
+            <h2 className="text-xl lg:text-2xl font-bold text-white">Expérience, Formation & Certifications</h2>
           </div>
           <div className="space-y-6">
             {/* Expériences */}
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
-                <Briefcase className="w-5 h-5 text-accent mr-2" />
-                <h3 className="text-base font-semibold">Expériences</h3>
+            <div className="mb-10">
+              <div className="flex items-center mb-6">
+                <div className="flex items-center gap-3 px-4 py-2 bg-accent/10 rounded-lg border border-accent/30">
+                  <Briefcase className="w-5 h-5 text-accent" />
+                  <h3 className="text-lg lg:text-xl font-bold text-accent">Expériences Professionnelles</h3>
+                </div>
               </div>
               {experiences.map((item, index) => (
-                <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer mb-4">
-                  <h3 className="font-semibold text-base lg:text-lg mb-2">{item.title}</h3>
-                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden">
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-4 h-4 text-gray-400" />
-                      <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
+                <div key={index} className="relative bg-secondary/70 rounded-xl p-5 lg:p-6 shadow-lg hover:shadow-xl border border-accent/20 hover:border-accent/40 transition-all duration-300 mb-5 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
+                      <Briefcase className="w-6 h-6 text-accent" />
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg lg:text-xl text-white mb-3">{item.title}</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-sm lg:text-base">
+                          <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                          <span className="text-gray-400">{item.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm lg:text-base">
+                          <Calendar className="w-4 h-4 text-accent flex-shrink-0" />
+                          <span className="text-accent font-semibold">{item.period}</span>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div className="pl-16">
                     <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
@@ -167,23 +178,34 @@ const About = () => {
             </div>
 
             {/* Formations */}
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
-                <GraduationCap className="w-5 h-5 text-accent mr-2" />
-                <h3 className="text-base font-semibold">Formations</h3>
+            <div className="mb-10">
+              <div className="flex items-center mb-6">
+                <div className="flex items-center gap-3 px-4 py-2 bg-accent/10 rounded-lg border border-accent/30">
+                  <GraduationCap className="w-5 h-5 text-accent" />
+                  <h3 className="text-lg lg:text-xl font-bold text-accent">Formations Académiques</h3>
+                </div>
               </div>
               {formations.map((item, index) => (
-                <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer mb-4">
-                  <h3 className="font-semibold text-base lg:text-lg mb-2">{item.title}</h3>
-                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden">
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-4 h-4 text-gray-400" />
-                      <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
+                <div key={index} className="relative bg-secondary/70 rounded-xl p-5 lg:p-6 shadow-lg hover:shadow-xl border border-accent/20 hover:border-accent/40 transition-all duration-300 mb-5 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
+                      <GraduationCap className="w-6 h-6 text-accent" />
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg lg:text-xl text-white mb-3">{item.title}</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-sm lg:text-base">
+                          <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                          <span className="text-gray-400">{item.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm lg:text-base">
+                          <Calendar className="w-4 h-4 text-accent flex-shrink-0" />
+                          <span className="text-accent font-semibold">{item.period}</span>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div className="pl-16">
                     <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
@@ -192,22 +214,33 @@ const About = () => {
 
             {/* Certifications */}
             <div>
-              <div className="flex items-center mb-4">
-                <Award className="w-5 h-5 text-accent mr-2" />
-                <h3 className="text-base font-semibold">Certifications</h3>
+              <div className="flex items-center mb-6">
+                <div className="flex items-center gap-3 px-4 py-2 bg-accent/10 rounded-lg border border-accent/30">
+                  <Award className="w-5 h-5 text-accent" />
+                  <h3 className="text-lg lg:text-xl font-bold text-accent">Certifications</h3>
+                </div>
               </div>
               {certifications.map((item, index) => (
-                <div key={index} className="group relative bg-secondary rounded-xl p-4 lg:p-5 shadow-md hover:bg-secondary/80 hover:bg-gray-800 transition-colors cursor-pointer mb-4">
-                  <h3 className="font-semibold text-base lg:text-lg mb-2">{item.title}</h3>
-                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-300 overflow-hidden">
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-4 h-4 text-gray-400" />
-                      <p className="text-gray-400 text-sm lg:text-base">{item.location}</p>
+                <div key={index} className="relative bg-secondary/70 rounded-xl p-5 lg:p-6 shadow-lg hover:shadow-xl border border-accent/20 hover:border-accent/40 transition-all duration-300 mb-5 group">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
+                      <Award className="w-6 h-6 text-accent" />
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-400 text-sm lg:text-base font-medium">{item.period}</span>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg lg:text-xl text-white mb-3">{item.title}</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-sm lg:text-base">
+                          <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                          <span className="text-gray-400">{item.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm lg:text-base">
+                          <Calendar className="w-4 h-4 text-accent flex-shrink-0" />
+                          <span className="text-accent font-semibold">{item.period}</span>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div className="pl-16">
                     <p className="text-sm lg:text-base text-gray-300 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
