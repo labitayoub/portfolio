@@ -2,6 +2,14 @@ import React from 'react';
 import { 
   User, Calendar, MapPin, Phone, Mail, Briefcase, GraduationCap, Building2, Code, Award
 } from 'lucide-react';
+import { 
+  FaReact, FaNodeJs, FaPhp, FaGitAlt, FaDocker, FaBootstrap, FaHtml5, FaCss3Alt, FaFigma
+} from 'react-icons/fa';
+import { 
+  SiLaravel, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, 
+  SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello,
+  SiMaterialui
+} from 'react-icons/si';
 
 const About = () => {
   const personalInfo = {
@@ -69,20 +77,41 @@ const About = () => {
     }
   ];
 
-  const technicalSkills = [
-    // Backend
-    "Express.js", "PHP", "Laravel", "Node.js",
-    // Frontend
-    "React.js", "MUI", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML/CSS",
-    // Bases de données
-    "MySQL", "PostgreSQL", "MongoDB",
-    // Méthodologies
-    "Agile (Scrum)",
-    // Outils
-    "Git/GitHub", "Docker", "XAMPP", "Figma",
-    // Gestion de projet
-    "Jira", "Notion", "Trello"
-  ];
+  const technicalSkills = {
+    backend: [
+      { name: "Node.js", icon: FaNodeJs, color: "#339933" },
+      { name: "Express.js", icon: SiExpress, color: "#000000" },
+      { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+      { name: "PHP", icon: FaPhp, color: "#777BB4" }
+    ],
+    frontend: [
+      { name: "React.js", icon: FaReact, color: "#61DAFB" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "MUI", icon: SiMaterialui, color: "#007FFF" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Bootstrap", icon: FaBootstrap, color: "#7952B3" },
+      { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" }
+    ],
+    database: [
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+      { name: "MySQL", icon: SiMysql, color: "#4479A1" }
+    ],
+    tools: [
+      { name: "Git/GitHub", icon: FaGitAlt, color: "#F05032" },
+      { name: "Docker", icon: FaDocker, color: "#2496ED" },
+      { name: "XAMPP", icon: SiXampp, color: "#FB7A24" },
+      { name: "Figma", icon: FaFigma, color: "#F24E1E" }
+    ],
+    project: [
+      { name: "Jira", icon: SiJira, color: "#0052CC" },
+      { name: "Notion", icon: SiNotion, color: "#000000" },
+      { name: "Trello", icon: SiTrello, color: "#0079BF" },
+      { name: "Agile (Scrum)", icon: Code, color: "#50C878" }
+    ]
+  };
 
   return (
     <div className="w-full min-h-screen flex flex-col px-4 sm:px-6 lg:px-16 xl:px-24 py-6 lg:py-10">
@@ -125,13 +154,85 @@ const About = () => {
               <Code className="w-6 h-6 text-accent mr-3" />
               <h3 className="text-xl lg:text-2xl font-bold text-white">Compétences Techniques</h3>
             </div>
-            <div className="grid grid-cols-2 gap-2.5">
-              {technicalSkills.map((skill, index) => (
-                <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors ">
-                  <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
-                  <span className="text-xs lg:text-sm font-medium">{skill}</span>
-                </div>
-              ))}
+            
+            {/* Backend */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wide">Backend</h4>
+              <div className="grid grid-cols-2 gap-2.5">
+                {technicalSkills.backend.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Frontend */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wide">Frontend</h4>
+              <div className="grid grid-cols-2 gap-2.5">
+                {technicalSkills.frontend.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Databases */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wide">Bases de Données</h4>
+              <div className="grid grid-cols-2 gap-2.5">
+                {technicalSkills.database.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wide">Outils</h4>
+              <div className="grid grid-cols-2 gap-2.5">
+                {technicalSkills.tools.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Project Management */}
+            <div className="mb-0">
+              <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wide">Gestion de Projet</h4>
+              <div className="grid grid-cols-2 gap-2.5">
+                {technicalSkills.project.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
+                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
