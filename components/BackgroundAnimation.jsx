@@ -76,7 +76,7 @@ const BackgroundAnimation = () => {
         if (this.opacity > 0) {
           ctx.save();
           ctx.globalAlpha = this.opacity;
-          ctx.fillStyle = '#00ff99';
+          ctx.fillStyle = '#ffffff';
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
           ctx.fill();
