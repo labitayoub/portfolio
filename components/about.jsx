@@ -6,7 +6,7 @@ import {
 const About = () => {
   const personalInfo = {
     name: "Labit Ayoub",
-    location: "Agadir, MAROC",
+    location: "Casa, MAROC",
     phone: "+212 622 734 781",
     email: "ayoub.labite@gmail.com",
     freelance: "Disponible",
