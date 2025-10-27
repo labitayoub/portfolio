@@ -163,7 +163,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -179,7 +179,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -195,7 +195,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -211,7 +211,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
@@ -227,7 +227,7 @@ const About = () => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-2 p-2.5 lg:p-3 rounded-lg hover:bg-accent/10 transition-colors border border-accent/10">
-                      <IconComponent className="text-base lg:text-lg flex-shrink-0" style={{ color: skill.color }} />
+                      <IconComponent className="text-xl lg:text-2xl flex-shrink-0" style={{ color: skill.color }} />
                       <span className="text-xs lg:text-sm font-medium truncate">{skill.name}</span>
                     </div>
                   );
