@@ -94,7 +94,7 @@ const About = () => {
       {/* Résumé Professionnel */}
       <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
         <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-          Je suis Développeur Mern Stack
+          Je suis Développeur Full Stack
         </p>
       </div>
 
