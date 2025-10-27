@@ -56,7 +56,7 @@ const Contact = () => {
             </div>
             <div className='pl-[20px]'>
               <h1 className='font-bold text-accent text-[20px]'>LOCALISATION</h1>
-              <h4>Agadir, Maroc</h4>
+              <h4>Casablanca, Maroc</h4>
             </div>
           </div>
           <div className=' w-[250px] flex'>
@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
             <div className='pl-[20px]'>
               <h1 className='font-bold text-accent text-[20px]'>EMAIL</h1>
-              <h4>dsimo4323@gmail.com</h4>
+              <h4>ayoub.labite@gmail.com</h4>
             </div>
           </div>
           <div className=' w-[250px] flex'>
@@ -74,7 +74,7 @@ const Contact = () => {
             </div>
             <div className='pl-[20px]'>
               <h1 className='font-bold text-accent text-[20px]'>TÉLÉPHONE</h1>
-              <h4>+212 659 511 779</h4>
+              <h4>+212 622 734 781</h4>
             </div>
           </div>
         </div>
@@ -85,20 +85,20 @@ const Contact = () => {
               <div className='flex space-x-4 mb-2'>
                 <div className='w-1/2'>
                   <h1 className='text-[14px] font-semibold mb-1'>Nom d&apos;utilisateur</h1>
-                  <input type="text" name='name' minLength={3} maxLength={30} required className='w-full h-[30px] p-2 border border-gray-300 rounded text-black' />
+                  <input type="text" name='name' minLength={3} maxLength={30} required placeholder="Votre nom" className='w-full h-[30px] p-2 border border-gray-300 rounded text-black' />
                 </div>
                 <div className='w-1/2'>
                   <h1 className='text-[14px] font-semibold mb-1'>Email</h1>
-                  <input type="email" name='email' minLength={5} maxLength={40} required className='w-full h-[30px] p-2 border border-gray-300 rounded text-black' />
+                  <input type="email" name='email' minLength={5} maxLength={40} required placeholder="votre.email@example.com" className='w-full h-[30px] p-2 border border-gray-300 rounded text-black' />
                 </div>
               </div>
               <div className='mb-2'>
                 <h1 className='text-[14px] font-semibold mb-1'>Sujet</h1>
-                <input  type="text" minLength={3} maxLength={40} required name="subject" className='w-full h-[30px] p-2 border border-gray-300 rounded text-black' />
+                <input  type="text" minLength={3} maxLength={40} required name="subject" placeholder="Objet de votre message" className='w-full h-[30px] p-2 border border-gray-300 rounded text-black' />
               </div>
               <div className='mb-4'>
                 <h1 className='text-[14px] font-semibold mb-1'>Message</h1>
-                <textarea name="message" rows={4} required className='w-full h-[80px] p-2 border border-gray-300 rounded text-black' />
+                <textarea name="message" rows={4} required placeholder="Écrivez votre message ici..." className='w-full h-[80px] p-2 border border-gray-300 rounded text-black' />
               </div>
               <div>
                 <button className='w-full h-[30px] bg-accent text-white rounded hover:bg-green-500 transition duration-300 ease-in-out'>Envoyer</button>

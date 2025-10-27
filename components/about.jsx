@@ -5,7 +5,7 @@ import {
 
 const About = () => {
   const personalInfo = {
-    name: "Labit Ayoub",
+    name: "Labit Ayoub - Développeur Mern Stack",
     location: "Casa, MAROC",
     phone: "+212 622 734 781",
     email: "ayoub.labite@gmail.com",
@@ -17,7 +17,25 @@ const About = () => {
       title: "Développeur Full Stack",
       location: "Devstratech, Casablanca",
       period: "Juillet 2025 - Septembre 2025",
-      description: "Développement full-stack des projets ATS et LMS, conception d'API RESTful avec Laravel, création d'interfaces dynamiques en React.js avec MUI et Tailwind CSS, conteneurisation via Docker et gestion du code source sur Git/GitHub."
+      description: "Développement full-stack des projets ATS et LMS, incluant la conception d'API RESTful avec Laravel et la création d'interfaces dynamiques en React.js. Réalisation d'interfaces modernes et responsives à l'aide de MUI et Tailwind CSS, avec conteneurisation des applications via Docker et gestion du code source sur Git/GitHub."
+    },
+    {
+      title: "Agent Administratif et Financier",
+      location: "Citibank Maghreb, Casablanca",
+      period: "Décembre 2022 - Février 2024",
+      description: "Supervision des opérations bancaires, suivi et contrôle pour conformité et sécurité. Gestion des produits bancaires et rapprochement back-office/front-office."
+    },
+    {
+      title: "Chargé de Portefeuille",
+      location: "Fondation Arrawaj (Microfinance)",
+      period: "2021 - 2022",
+      description: "Gestion et octroi de crédits, fidélisation et développement du portefeuille clients."
+    },
+    {
+      title: "Assistant Administratif et Financier",
+      location: "Ste MAZALU BEST, El Jadida",
+      period: "Janvier 2021 - Décembre 2021",
+      description: "Contrôle et enregistrement des factures, mise en paiement fournisseurs, classement et archivage des dossiers comptables et financiers."
     }
   ];
 
@@ -52,9 +70,18 @@ const About = () => {
   ];
 
   const technicalSkills = [
+    // Backend
+    "Express.js", "PHP", "Laravel", "Node.js",
+    // Frontend
     "React.js", "MUI", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML/CSS",
-    "Node.js", "Express.js", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB",
-    "REST API", "Docker", "Git/GitHub", "Figma", "XAMPP"
+    // Bases de données
+    "MySQL", "PostgreSQL", "MongoDB",
+    // Méthodologies
+    "Agile (Scrum)",
+    // Outils
+    "Git/GitHub", "Docker", "XAMPP", "Figma",
+    // Gestion de projet
+    "Jira", "Notion", "Trello"
   ];
 
   return (
@@ -62,6 +89,13 @@ const About = () => {
       <div className="flex items-center justify-center lg:justify-start mb-8 lg:mb-10">
         <span className="text-2xl lg:text-3xl font-semibold">À Propos</span>
         <div className="w-24 sm:w-32 lg:w-40 h-1 ml-4 lg:ml-6 rounded-full bg-gradient-to-r from-accent to-primary"></div>
+      </div>
+
+      {/* Résumé Professionnel */}
+      <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
+        <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+          Développeur Full Stack passionné, orienté vers la performance et la qualité du code. Conception de solutions web modernes, stables et bien structurées avec adoption des bonnes pratiques de développement et méthodes agiles.
+        </p>
       </div>
 
       <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 bg-gradient-to-t from-backdrop-blur-md to-transparent backdrop-blur-md">
