@@ -9,7 +9,7 @@ import {
 import { 
   SiLaravel, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, 
   SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello,
-  SiMaterialui, SiScrum, SiGithub
+  SiMaterialui, SiGithub
 } from 'react-icons/si';
 
 const About = () => {
@@ -26,7 +26,7 @@ const About = () => {
       title: "Développeur Full Stack",
       location: "Devstratech, Casablanca",
       period: "Juillet 2025 - Septembre 2025",
-      description: "Développement full-stack des projets ATS et LMS, incluant la conception d'API RESTful avec Laravel et la création d'interfaces dynamiques en React.js. Réalisation d'interfaces modernes et responsives à l'aide de MUI et Tailwind CSS, avec conteneurisation des applications via Docker et gestion du code source sur Git/GitHub."
+      description: "Développement full-stack des projets ATS et LMS, incluant la conception d&apos;API RESTful avec Laravel et la création d&apos;interfaces dynamiques en React.js. Réalisation d&apos;interfaces modernes et responsives à l&apos;aide de MUI et Tailwind CSS, avec conteneurisation des applications via Docker et gestion du code source sur Git/GitHub."
     },
     {
       title: "Agent Administratif et Financier",
@@ -68,13 +68,13 @@ const About = () => {
       title: "Developing Front-End Apps with React",
       location: "IBM / Coursera",
       period: "2025",
-      description: "Certification en développement d'applications front-end avec React."
+      description: "Certification en développement d&apos;applications front-end avec React."
     },
     {
       title: "Introduction to Cloud Computing",
       location: "IBM / Coursera",
       period: "2024",
-      description: "Certification d'introduction au Cloud Computing."
+      description: "Certification d&apos;introduction au Cloud Computing."
     }
   ];
 
@@ -110,7 +110,7 @@ const About = () => {
       { name: "Jira", icon: SiJira },
       { name: "Notion", icon: SiNotion },
       { name: "Trello", icon: SiTrello },
-      { name: "Agile (Scrum)", icon: SiScrum }
+      { name: "Agile (Scrum)", icon: null }
     ]
   };
 
