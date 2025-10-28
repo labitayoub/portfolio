@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { 
   User, Calendar, MapPin, Phone, Mail, Briefcase, GraduationCap, Building2, Code, Award
