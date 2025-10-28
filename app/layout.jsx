@@ -1,11 +1,12 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import dynamic from 'next/dynamic';
 
 
 // Components
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import BackgroundAnimation from "@/components/BackgroundAnimation";
+const BackgroundAnimation = dynamic(() => import("@/components/BackgroundAnimation"), { ssr: false });
 
 const JetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
