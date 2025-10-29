@@ -8,19 +8,18 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "Gestion Scolaire V2",
-  description: "Application de gestion scolaire dynamique avec système d&apos;authentification sécurisé par jeton. Permet aux utilisateurs d&apos;effectuer des opérations CRUD complètes (ajout, suppression, mise à jour) sur les données. Développée avec Node.js, Express et MongoDB, utilisant Redux pour une gestion optimisée de l&apos;état.",
-      image: "/gestion-vid.mp4",
-      isVideo: true,
+      title: "SihatiHub",
+      description: "SihatiHub – Full-stack EHR application (Node.js, Express, MongoDB, React) for managing users, patients, and appointments. MVP includes auth (JWT), patient records, appointment scheduling with conflict prevention, and email notifications.",
+      image: "https://images.unsplash.com/photo-1582719478176-1a7f3a5d3a2b?w=600&h=400&fit=crop&auto=format&q=60",
+      isVideo: false,
       technologies: [
         { name: "React", icon: FaReact },
         { name: "Node.js", icon: FaNodeJs },
         { name: "MongoDB", icon: SiMongodb },
-        { name: "Express", icon: SiExpress },
-        { name: "Redux", icon: SiRedux }
+        { name: "Express", icon: SiExpress }
       ],
-      githubUrl: "https://github.com/LabitAyoub/gestion-scolaire-v2",
-      liveUrl: "https://gestion-scolaire-demo.com"
+      githubUrl: "https://github.com/labitayoub/SihatiHub",
+      liveUrl: ""
     },
     {
       id: 2,
