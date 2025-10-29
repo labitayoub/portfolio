@@ -8,8 +8,7 @@ import {
 } from 'react-icons/fa';
 import { 
   SiLaravel, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, 
-  SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello,
-  SiMaterialdesign, SiGithub
+  SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello, SiGithub
 } from 'react-icons/si';
 
 const About = () => {
@@ -89,7 +88,7 @@ const About = () => {
       { name: "React.js", icon: FaReact },
       { name: "JavaScript", icon: SiJavascript },
       { name: "TypeScript", icon: SiTypescript },
-      { name: "MUI", icon: SiMaterialdesign },
+      { name: "MUI", icon: Code },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "Bootstrap", icon: FaBootstrap },
       { name: "HTML5", icon: FaHtml5 },

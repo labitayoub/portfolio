@@ -9,7 +9,7 @@ const Projects = () => {
     {
       id: 1,
       title: "Gestion Scolaire V2",
-      description: "Application de gestion scolaire dynamique avec système d'authentification sécurisé par jeton. Permet aux utilisateurs d'effectuer des opérations CRUD complètes (ajout, suppression, mise à jour) sur les données. Développée avec Node.js, Express et MongoDB, utilisant Redux pour une gestion optimisée de l'état.",
+  description: "Application de gestion scolaire dynamique avec système d&apos;authentification sécurisé par jeton. Permet aux utilisateurs d&apos;effectuer des opérations CRUD complètes (ajout, suppression, mise à jour) sur les données. Développée avec Node.js, Express et MongoDB, utilisant Redux pour une gestion optimisée de l&apos;état.",
       image: "/gestion-vid.mp4",
       isVideo: true,
       technologies: [
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Plateforme E-commerce",
-      description: "Plateforme e-commerce complète et robuste incluant la gestion avancée des produits, panier d'achat intelligent, système de paiement sécurisé et tableau de bord administrateur complet pour la gestion des commandes.",
+  description: "Plateforme e-commerce complète et robuste incluant la gestion avancée des produits, panier d&apos;achat intelligent, système de paiement sécurisé et tableau de bord administrateur complet pour la gestion des commandes.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=entropy&auto=format&q=60",
       isVideo: false,
       technologies: [
