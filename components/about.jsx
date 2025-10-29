@@ -9,7 +9,7 @@ import {
 import { 
   SiLaravel, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, 
   SiJavascript, SiTypescript, SiXampp, SiJira, SiNotion, SiTrello,
-  SiMaterialui, SiGithub
+  SiMaterialdesign, SiGithub
 } from 'react-icons/si';
 
 const About = () => {
@@ -89,7 +89,7 @@ const About = () => {
       { name: "React.js", icon: FaReact },
       { name: "JavaScript", icon: SiJavascript },
       { name: "TypeScript", icon: SiTypescript },
-      { name: "MUI", icon: SiMaterialui },
+      { name: "MUI", icon: SiMaterialdesign },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "Bootstrap", icon: FaBootstrap },
       { name: "HTML5", icon: FaHtml5 },
@@ -124,7 +124,7 @@ const About = () => {
       {/* Résumé Professionnel */}
       <div className="bg-secondary/50 rounded-xl p-5 lg:p-6 shadow-lg mb-6 lg:mb-8 border border-accent/20">
         <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-          Je suis Développeur Full Stack passionné par la création d'applications web modernes et performantes. Mon expertise couvre tout le cycle de développement, du front-end au back-end, avec une attention particulière à la qualité du code et à l'expérience utilisateur.
+          Je suis Développeur Full Stack passionné par la création d&apos;applications web modernes et performantes. Mon expertise couvre tout le cycle de développement, du front-end au back-end, avec une attention particulière à la qualité du code et à l&apos;expérience utilisateur.
         </p>
       </div>
 
