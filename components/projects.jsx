@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
+import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiPhp, SiMysql, SiPostgresql } from "react-icons/si";
 import Image from 'next/image';
 
 const Projects = () => {
@@ -37,16 +37,18 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Plateforme E-commerce",
-  description: "Plateforme e-commerce complète et robuste incluant la gestion avancée des produits, panier d&apos;achat intelligent, système de paiement sécurisé et tableau de bord administrateur complet pour la gestion des commandes.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=entropy&auto=format&q=60",
+      title: "RestoBladi - Restaurant Management System",
+      description: "RestoBladi: système de gestion de restaurant (cuisine marocaine). Gestion du menu, commandes, réservations, utilisateurs, inventaire et tableau de bord analytique. Backend en PHP, frontend HTML/CSS/JS, base de données MySQL/Postgres.",
+      image: "https://images.unsplash.com/photo-1541542684-2f6a7a4f9a3b?w=600&h=400&fit=crop&auto=format&q=60",
       isVideo: false,
       technologies: [
-        { name: "React", icon: FaReact },
-        { name: "Node.js", icon: FaNodeJs },
-        { name: "MongoDB", icon: SiMongodb }
+        { name: "PHP", icon: SiPhp },
+        { name: "MySQL", icon: SiMysql },
+        { name: "HTML5", icon: SiHtml5 },
+        { name: "CSS3", icon: SiCss3 },
+        { name: "JavaScript", icon: SiJavascript }
       ],
-      githubUrl: "#",
+      githubUrl: "https://github.com/labitayoub/RestoBladi",
       liveUrl: ""
     }
   ];
