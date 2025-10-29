@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
 import Image from 'next/image';
 
 const Projects = () => {
@@ -23,17 +23,17 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Portfolio Personnel",
-      description: "Portfolio moderne et entièrement responsive développé avec Next.js et Tailwind CSS. Interface épurée avec des animations fluides, optimisation SEO avancée et design adaptatif pour tous les appareils.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop&crop=entropy&auto=format&q=60",
+      title: "Tic Tac Toe (Morpion)",
+      description: "Tic Tac Toe – Vanilla JS. Jeu classique réalisé en HTML/CSS/JavaScript (ES6+). Deux joueurs (X / O), détection de victoire/égalité, réinitialisation rapide et interface responsive. Voir DOCUMENTATION_FONCTIONNELLE.md pour la doc complète.",
+      image: "https://images.unsplash.com/photo-1601597110158-2a8b2a2b5c8b?w=600&h=400&fit=crop&auto=format&q=60",
       isVideo: false,
       technologies: [
-        { name: "Next.js", icon: SiNextdotjs },
-        { name: "Tailwind", icon: SiTailwindcss },
-        { name: "TypeScript", icon: SiTypescript }
+        { name: "HTML5", icon: SiHtml5 },
+        { name: "CSS3", icon: SiCss3 },
+        { name: "JavaScript", icon: SiJavascript }
       ],
-      githubUrl: "https://github.com/LabitAyoub/Portfolio",
-      liveUrl: ""
+      githubUrl: "https://github.com/labitayoub/Tic-Tac-Toe-with-js-vanilla",
+      liveUrl: "https://tic-tac-2025.vercel.app/"
     },
     {
       id: 3,
