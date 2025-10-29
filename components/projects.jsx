@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiPhp, SiMysql, SiPostgresql } from "react-icons/si";
+import { SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiLaravel, SiMysql } from "react-icons/si";
 import Image from 'next/image';
 
 const Projects = () => {
@@ -37,16 +37,15 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "RestoBladi - Restaurant Management System",
-      description: "RestoBladi: système de gestion de restaurant (cuisine marocaine). Gestion du menu, commandes, réservations, utilisateurs, inventaire et tableau de bord analytique. Backend en PHP, frontend HTML/CSS/JS, base de données MySQL/Postgres.",
+  title: "RestoBladi - Restaurant Management System",
+  description: "RestoBladi: système de gestion de restaurant (cuisine marocaine). Gestion du menu, commandes, réservations, utilisateurs, inventaire et tableau de bord analytique. Développé avec Laravel (PHP) pour le backend, Tailwind CSS et JavaScript pour le frontend.",
       image: "https://images.unsplash.com/photo-1541542684-2f6a7a4f9a3b?w=600&h=400&fit=crop&auto=format&q=60",
       isVideo: false,
       technologies: [
-        { name: "PHP", icon: SiPhp },
-        { name: "MySQL", icon: SiMysql },
-        { name: "HTML5", icon: SiHtml5 },
-        { name: "CSS3", icon: SiCss3 },
-        { name: "JavaScript", icon: SiJavascript }
+        { name: "Laravel", icon: SiLaravel },
+        { name: "Tailwind", icon: SiTailwindcss },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "MySQL", icon: SiMysql }
       ],
       githubUrl: "https://github.com/labitayoub/RestoBladi",
       liveUrl: ""
